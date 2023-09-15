@@ -12,7 +12,7 @@ A specific link to this viewable doc: [xGATEWAY HaLow User's Guide](https://www.
 > Update link above.
 # General Comments
 The app includes the following elements:
-- xGwTestApp.cpp: Includes "main" and simply calls individual test methods.
+- [xGwTestApp.cpp](xGwTestApp.cpp): Includes "main" and simply calls individual test methods.
 - Defines.h: Defines constants including command and other message IDs.
 - CUtility.h/CUtility.capp: The CUtility class implements ... static utility functions used by other classes (e.g. a GetCurrentUnixTimeUTC() returns the current unix time at Greenwich).
 - CUSBTests.h/CUSBTests.cpp: Implements all interface test methods supporting an xGATEWAY communicating with xTAG USB Sensors.
