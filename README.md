@@ -44,6 +44,6 @@ Because a socket interface is used, the app can be easily ported to run on an xG
    - Stop acquisition and disconnect the xTAG.
 9. Disconnect sockets.
 ## BLE Support
-Note that the current interface does not support xTAG BLE sensor interaction as BLE sensors are almost exclusivly used with the xTAG Explorer Android app (i.e. no xGATEWAY installation required). WiFi HaLow is the best option when wirelessly connecting xTAG sensors given that HaLow supports 1000's of concurrent connections (vs about 20 BLE connections) and HaLow supports 3x - 5x the wireless range.
+Note that the current interface does not support xTAG BLE sensor interaction as BLE sensors are almost exclusivly used with the xTAG Explorer Android app (i.e. no xGATEWAY installation required). WiFi HaLow is the best option when wirelessly connecting xTAG sensors given that HaLow supports 1000's of concurrent connections (vs about 10 BLE connections) and HaLow supports 3x - 5x the wireless range.
 # Support
 If you have any questions regarding this application, please reach out to [Deviceworx Support](mailto:support@deviceworx.com).
