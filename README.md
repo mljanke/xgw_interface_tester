@@ -13,10 +13,10 @@ A specific link to this viewable doc: [xGATEWAY HaLow User's Guide](https://www.
 # General Comments
 The app includes the following elements:
 - [xGwTestApp.cpp](xGwTestApp.cpp): Includes "main" and simply calls individual test methods.
-- Defines.h: Defines constants including command and other message IDs.
-- CUtility.h/CUtility.capp: The CUtility class implements ... static utility functions used by other classes (e.g. a GetCurrentUnixTimeUTC() returns the current unix time at Greenwich).
-- CUSBTests.h/CUSBTests.cpp: Implements all interface test methods supporting an xGATEWAY communicating with xTAG USB Sensors.
-- CUSBTests.h/CUSBTests.cpp: Implements all interface test methods supporting an xGATEWAY communicating with xTAG HaLow Sensors.
+- [Defines.h](Defines.h): Defines constants including command and other message IDs.
+- [CUtility.h](CUtility.h)/[CUtility.cpp](CUtility.cpp): The CUtility class implements ... static utility functions used by other classes (e.g. a GetCurrentUnixTimeUTC() returns the current unix time at Greenwich).
+- [CUSBTests.h](CUSBTests.h)/[CUSBTests.cpp](CUSBTests.cpp): Implements all interface test methods supporting an xGATEWAY communicating with xTAG USB Sensors.
+- [CHloTests.h](CHloTests.h)/[CHloTests.cpp](CHloTests.cpp): Implements all interface test methods supporting an xGATEWAY communicating with xTAG HaLow Sensors.
 # Project Support and Format
 The app was developed Visual Studio Community Edition. Project and solution files for VS are included. Note that this supports simple migration to other dev environments as required.
 For simplicty, the app has been developed as a Windows Console app with simple user menu selection driving which tests are executed. Users enter required test parameters including xTAG IDs (when testing with an indentifed xTAG is required).
