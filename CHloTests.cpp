@@ -320,7 +320,7 @@ bool CHloTests::ExTAGVibTest(SOCKET PrimeSkt, SOCKET StreamSkt)
 	WritexTgMetaCmdBytes[9] = (U8)((xTgConfigUnixTime >> 16) & 0x000000FF);
 	WritexTgMetaCmdBytes[10] = (U8)((xTgConfigUnixTime >> 8) & 0x000000FF);
 	WritexTgMetaCmdBytes[11] = (U8)((xTgConfigUnixTime >> 0) & 0x000000FF);
-	WritexTgMetaCmdBytes[12] = 0x10;	// Type alwasy acc (0x10)
+	WritexTgMetaCmdBytes[12] = 0x10;	// Type always acc (0x10)
 	WritexTgMetaCmdBytes[13] = TxPwr;									
 	WritexTgMetaCmdBytes[14] = (U8)((xTgHeartbeatFreq >> 8) & 0x00FF);	
 	WritexTgMetaCmdBytes[15] = (U8)((xTgHeartbeatFreq >> 0) & 0x00FF);
@@ -929,8 +929,16 @@ bool CHloTests::ExTAGEnvTest(SOCKET PrimeSkt, SOCKET StreamSkt)
 	// Send a command to stop sampling.
 	printf("Stopping sampling....");
 
-	const U8 SampleStopCmdLen = 2;
-	U8 SampleStopCmd[SampleStopCmdLen] = { XTAG_ACQ_STOP_CMD, SampleStopCmdLen };
+	const U8 SampleStopCmdLen = 0x08;
+	U8 SampleStopCmd[SampleStopCmdLen];
+	SampleStopCmd[0] = XTAG_ACQ_STOP_CMD;
+	SampleStopCmd[1] = SampleStopCmdLen;
+	SampleStopCmd[2] = xTAG_ID[0];
+	SampleStopCmd[3] = xTAG_ID[1];
+	SampleStopCmd[4] = xTAG_ID[2];
+	SampleStopCmd[5] = xTAG_ID[3];
+	SampleStopCmd[6] = xTAG_ID[4];
+	SampleStopCmd[7] = xTAG_ID[5];
 
 	// Process the cmd and provide an array for response.
 	CmdExResult = CUtility::ProcCmdForResp(PrimeSkt, SampleStopCmd, SampleStopCmdLen, RespBytes, PRIMARY_REC_BUFLEN, 1000); // 1000 mSec timeout.
